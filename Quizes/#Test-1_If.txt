@@ -1,0 +1,21 @@
+#Write an if statement to output in range if variable myNumber is 
+    #between 5 and 10 inclusive. If outside the range, no output is displayed. 
+    #The following pseudocode  is provided for you.  
+
+Variable declarations
+
+   num myNumber = 0
+
+   string rangePrompt = "Enter a number between 5 and 10 inclusive", rangeMsg = "in range"
+
+output rangePrompt 
+
+input myNumber
+
+
+#Answer: 
+
+if myNumber >= 5 and myNumber <= 10
+    output rangeMsg
+end if 
+

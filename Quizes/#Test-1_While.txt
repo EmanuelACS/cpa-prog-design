@@ -1,0 +1,21 @@
+#Write a while loop to add up a series of numbers entered by the user. 
+#Stop when the user types 0. Display to the user Your total is followed by the calculated total. 
+#The following variables have been declared. 
+
+Variable declarations
+
+   num someNumber = -1, loopStop = 0, total = 0 
+
+   string numberPrompt = "Please enter a number "
+
+   string totalMsg = "Your total is  "
+
+#Answer: 
+
+while someNumber != loopStop
+    output numberPrompt
+    input num
+    total = total + num
+end while
+
+output totalMsg, total

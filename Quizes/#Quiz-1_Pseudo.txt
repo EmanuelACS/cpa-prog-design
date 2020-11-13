@@ -1,0 +1,27 @@
+Goal: design a program to ask the user for report date,
+ number of posts and number of users.
+ Calculate the average number of posts per user.
+ There are 3 lines of output:
+    Posts Report as of <user entered date>
+    Average posts <calculated average>
+    End of report
+
+Variable Declarations
+    string datePrompt = "Please enter the report date: "
+    string reportDate
+    string postsPrompt = "Please enter the number of posts: "
+    string usersPrompt = "Please enter the number of users: "
+    num posts = 0, users = 0, averagePosts = 0
+    string dateOutput = "Posts Report as of "
+    string postsOuptut = "Average posts ", endOuptut = "End of report"
+
+output datePrompt
+input reportDate
+output postsPrompt
+input posts
+output usersPrompt 
+input users
+averagePosts = posts / users
+output dateOutput, reportDate
+output postsOuptut, averagePosts
+output endOuptut

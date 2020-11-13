@@ -1,0 +1,36 @@
+The pseudocode below is for purchasing a car. 
+ The user is prompted to enter the base cost of the car.
+ The program calculates a 25% sales fee and 13% tax.
+ The output should read:
+
+    Before tax cost: xxx. Final cost: yyy
+
+ where xxx is the cost before tax and yyy is the final cost.
+ There are bugs in the pseudocode. 
+ To answer this question, copy the pseudocode to the clipboard and paste it in the answer field.
+ Find and fix the bugs.  
+
+Variable Declarations
+
+   num costPrompt = "Enter base cost of car: "
+
+   num salesPercent = 0.25, taxRate = 0.13
+
+   num baseCost = 0, costBeforeTax = 0, finalCost = 0
+
+   string beforeTaxMsg = "Before tax cost: "
+
+   string finalMsg = ". Final cost: "
+
+ 
+
+output costPrompt
+
+input baseCost
+
+costBeforeTax = baseCost + (baseCost * salesPercent)
+
+finaCost = costBeforeTax + (costBeforeTax * taxRate)
+
+output beforeTaxMsg, costBeforeTax, finalMsg, finalCost 
+

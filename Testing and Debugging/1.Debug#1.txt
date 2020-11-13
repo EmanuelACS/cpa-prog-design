@@ -1,0 +1,28 @@
+#Find and fix the bugs: 
+Variable Declarations
+   string milesTravelledPrompt = "Enter miles travelled"
+   string gallonsPrompt = "Enter litres used"
+   string mpgMsg="Miles per gallon: "
+   num milesTravelled = 0, gallonsOfGasUsed = 0
+
+output milesTravelledPrompt
+input milesTravelled
+output gallonsPrompt
+input gallonsOfGasUsed
+gallonsOfGasUsed/milesTravelled = milesPerGallon
+output mpgMsg, milesPerGallon
+
+#Debugged:
+Variable Declarations
+    string milesTravelledPrompt = "Enter miles travelled"
+    string gallonsPrompt = "Enter gallons used"
+    string mpgMsg="Miles per gallon: "
+    num milesTravelled = 0, gallonsOfGasUsed = 0
+    num milesPerGallon = 0
+
+output milesTravelledPrompt
+input milesTravelled
+output gallonsPrompt
+input gallonsOfGasUsed
+milesPerGallon = gallonsOfGasUsed/milesTravelled
+output mpgMsg, milesPerGallon

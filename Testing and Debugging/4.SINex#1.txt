@@ -1,0 +1,25 @@
+#SIN Exercise 
+Goal: design a program that prompts the user for their SIN and annual salary
+ and outputs their net salary assuming 40% tax.
+ The output should be Your net salary is $x where x is the calculated net salary.
+ Remember to design input then processing then output.
+ Your task is to create pseudocode for this program. 
+
+#Answer: 
+Variable Declarations  
+    string sinPrompt = "What is your SIN?"
+    string annualSalaryPrompt = "What is your annual salary?"
+    string SIN
+    num annualSalary = 0
+    num netSalary = 0
+    num taxRate = 0.4
+    string netResult = "Your net salary is $"
+
+output sinPrompt
+input SIN
+output annualSalaryPrompt
+input annualSalary
+netSalary = annualSalary - (annualSalary * taxRate)
+output netResult, netSalary
+
+

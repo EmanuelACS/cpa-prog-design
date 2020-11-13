@@ -1,0 +1,35 @@
+#Find and fix the bugs:  
+Variable Declarations
+   string dollarsPrompt = "Enter total dollars spent"
+   string daysPrompt = "Enter days on trip"
+   string byePrompt = "Thanks for coming. Bye."
+   num totalDollarsSpent = 0, daysOnTrip = 0, daysInWeek = 6
+   num costPerDay = 0, costPerWeek = 0, weeks = 0
+
+output dollarsPrompt
+input totalDollarsSpent
+output daysPrompt
+input daysOnTrip
+costPerDay = totalMoneySpent * daysOnTrip
+weeks = daysOnTrip  / daysInWeek
+costPerWeek = daysOnTrip / numberOfWeeks
+output totalDollarsSpent, costPerDay, costPrWeek
+output byePrompt
+
+
+#Fixed: Variable Declarations
+   string dollarsPrompt = "Enter total dollars spent"
+   string daysPrompt = "Enter days on trip"
+   string byePrompt = "Thanks for coming. Bye."
+   num totalDollarsSpent = 0, daysOnTrip = 0, daysInWeek = 7
+   num costPerDay = 0, costPerWeek = 0, numberOfWeeks = 0
+
+output dollarsPrompt
+input totalDollarsSpent
+output daysPrompt
+input daysOnTrip
+costPerDay = totalDollarsSpent / daysOnTrip
+numberOfWeeks = daysOnTrip  / daysInWeek
+costPerWeek = totalDollarsSpent / numberOfWeeks
+output totalDollarsSpent, costPerDay, costPerWeek
+output byePrompt

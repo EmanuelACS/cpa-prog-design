@@ -1,0 +1,124 @@
+if condition  
+    statements
+else
+    statements
+end if
+
+#Example
+if startDate <= "2015-5-25"
+    bonuse = 5000
+else if 
+end if
+
+#Excercise
+Write an if statement that checks that value of secondNumber.
+ If secondNumber is 0, display variable divideByZeroError.
+ Otherwise, calculate result as firstNumber divided by
+ secondNumber then output result.  
+
+
+Variable Declarations
+    num firstNumber = 0, secondNumber = 0, result = 0
+    string numberMsg = "Enter number "
+    string divideByZeroError = "Cannot divide by 0" 
+
+output numberMsg
+input firstNumber
+output numberMsg
+input secondNumber
+
+if secondNumber = 0
+    output divideByZeroError
+else 
+    result = firstNumber / secondNumber
+    output result
+end if
+
+#Nested Ifs
+The business rules for the pseudocode below are as follows:
+-	if the customer has 10 or less items in their shopping cart, the shipping is a minimum of $20.
+    - If 10 or less items and the order subtotal is 100 or less, an additional $5 shipping fees applies.
+-	if the customer has more than 10 items in their shopping cart, the shipping is free.
+    - If over 10 items and the order subtotal is over 100, then an 11% discount applies.
+
+Variable declarations
+   num nbrOfItemsInCart = 0, shippingCost = 0
+   num orderSubtotal = 0, discount = 0, subtotalThreshold = 100
+   num discountForBigOrders = 0.11, additionalShippingFee = 5
+   num nbrItemsForFreeShipping = 10, baseShippingCost = 20
+
+#pseudocode here to retrieve nbrOfItemsInCart and orderSubtotal
+    #from web server
+
+if nbrOfItemsInCart <= nbrItemsForFreeShipping
+   shippingCost = baseShippingCost
+   if orderSubtotal <= subtotalThreshold
+      shippingCost = shippingCost + additionalShippingFee
+   end if
+else
+   shippingCost = 0
+   if orderSubtotal > subtotalThreshold
+      discount = discountForBigOrders
+   end if
+end if
+
+total = orderSubtotal + shippingCost – (orderSubtotal * discount)
+
+
+#Logical Opertator
+The three logical operators (And, Or, Not) 
+    - (and, or, !)
+
+#Case statement
+case number
+  case 100
+     markup = 0.10
+  case > 100
+      markup = 0.11
+  default
+      markup = 0.00
+end case 
+
+
+#While Loop
+Variable Declarations 
+    string askContinue = "Continue? Type Y or N."
+    string shouldContinue = "Y"
+    string lastMsg = "Goodbye"
+
+while shouldContinue = "Y"
+    output askContinue
+    input shouldContinue
+end while
+output lastMsg
+
+Variable Declarations
+    num a, b
+
+a = 10, b = 60
+while a <= b
+    a = a + b / 2
+end while
+output a
+
+#For loops
+for counter = initialValue to finalValue step stepValue
+    statements that execute when counter is in range
+end for
+
+
+for counter = 0 to 3   
+    output "Hello"  #gets output 4 times 
+end for 
+
+for counter = 0 to 100 step 5
+    output "+5" #
+end for
+
+for counter = 1 to 100 step 5
+    ouput "+5 starting at 6"
+end for
+
+for counter = "A" to "Z" step 2
+    ouptut "5"
+end for 

@@ -1,0 +1,96 @@
+Name: Emanuel Dobra
+
+Variable declarations
+    string welcomeUser = "Welcome to Doggo For Life!"
+    string notifyUser = "Your doggo device will be added to your shopping cart."
+    string userName, noseBoopID
+    date expiryDate
+    num cardNumber, cvcCode
+    string foodDPrompt = "Would you like to buy a food dispenser?"
+    string treatDPrompt = "Would you like to buy a treat dispenser?"
+    string bellyRRPrompt = "Would you like to buy a belly rub robot?"
+    bool buyFoodDisp, buyTreatDisp, buyBellyRubRbt
+    num subTotal, taxAmount, total
+ouptut welcomeUser
+ouptut notifyUser
+input userName
+input noseBoopID
+input cardNumber
+input cvcCode
+input expiryDate
+buyFoodDisp = getYesOrNoAnswer(foodDPrompt)
+buyTreatDisp = getYesOrNoAnswer(treatDPrompt)
+buyBellyRubRbt = getYesOrNoAnswer(bellyRRPrompt)
+calculateAmountOwing(buyFoodDisp, buyTreatDisp, buyBellyRubRbt,
+    subTotal, taxAmount, total)
+displayPurchaseSummary(buyFoodDisp, buyTreatDisp, buyBellyRubRbt,
+    subTotal, taxAmount, total)
+displayFAQ()
+
+bool getYesOrNoAnswer(byval string userPrompt) 
+    Variable declarations
+        string userAnswer = "empty"
+        string errorMsg = "Invalid data entry, please enter "Y" or "N"."
+        bool answer = false
+    output userPrompt
+    input userAnswer
+    while userAnswer != Y and userAnswer != N
+        output errorMsg
+        output userPrompt 
+        input userAnswer
+    end while
+    if userAnswer = Y
+        answer = true
+return answer 
+
+void calculateAmountOwing(byval bool foodDispenser, 
+    byval bool treatDispenser, byval bool bellyRubRobot, 
+    byref num subTotal, byref num taxAmount, byref num total)
+    Variable declarations
+        num foodDispenserCost = 10, treatDispenserCost = 12
+        num bellyRubRobotCost = 50, deviceCost = 150
+        num taxRate = 0.13
+    if foodDispenser
+        subTotal = subTotal + foodDispenserCost
+    end if 
+    if treatDispenser
+        subTotal = subTotal + treatDispenserCost
+    end if
+    if bellyRubRobot
+        subTotal = subTotal + bellyRubRobotCost
+    end if
+    subTotal = subTotal + deviceCost
+    taxAmount = subTotal*taxRate
+    total = subTotal + taxAmount
+return 
+
+void displayPurchaseSummary(byval bool foodDispenser, 
+    byval bool treatDispenser, byval bool bellyRubRobot,
+    byval num subTotal, byval num taxAmount, byval num total)
+    output "Purchase Summary"
+    output "One Doggo Device."
+    if foodDispenser
+        output "One food dispenser."
+    end if 
+    if treatDispenser
+        output "One treat dispenser."
+    end if
+    if bellyRubRobot
+        output "One belly rub robot."
+    end if
+    output "Subtotal ", subTotal
+    output "Tax amount ", taxAmount
+    output "Total ", total
+return 
+
+void displayFAQ()
+    Variable declarations
+        inputfile tipsFAQ
+        string tip
+    open file faq.dat as tipsFAQ
+    while not eof tipsFAQ
+        read tip
+        output tip
+    end while
+    close file tipsFAQ
+return 

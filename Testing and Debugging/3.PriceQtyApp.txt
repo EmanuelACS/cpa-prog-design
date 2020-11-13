@@ -1,0 +1,13 @@
+#Price Quantity Application  
+Variable Declarations
+    string pricePrompt = "Price? ", qtyPrompt = "How many? "
+    string totalMsg = "Your total is: ", byeMsg = "Goodbye!"
+    num itemPrice = 0, itemQty = 0, total = 0
+
+output pricePrompt
+input itemPrice
+output qtyPrompt
+input itemQty
+total = itemPrice * itemQty
+output totalMsg, total
+output byeMsg

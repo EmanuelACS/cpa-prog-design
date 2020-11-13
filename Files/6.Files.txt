@@ -1,0 +1,6 @@
+#Files 
+Steps: 
+    - Open file
+    - while not EOF
+        - read a record from the file
+    - end while

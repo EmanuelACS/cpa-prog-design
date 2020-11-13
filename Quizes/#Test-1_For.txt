@@ -1,0 +1,6 @@
+#Write pseudocode to output even numbers from 200 to 300 inclusive. 
+#You do not have to declare variables. Feel free to use literals for this question.  
+
+for counter = 200 to 300 step 2
+    output counter
+end for
