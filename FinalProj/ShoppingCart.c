@@ -1,0 +1,160 @@
+class clsDog
+    Variable Declarations
+        private string dogName
+        private string noseBoop
+        private string creditCardNbr
+        private string cvc
+        private date expiryDate
+        private bool foodDispenserPurchased
+        private bool treatDispenserPurchased
+        private bool bellyRubRobotPurchased
+    
+    public void setDogName(byval string pDogName)
+        if (pDogName <> empty)
+            this.dogName = pDogName
+        end if 
+    return
+
+    public string getDogName()
+    return (this.dogName)
+
+    public void setExpiryDate (byval date pExpiryDate)
+        if (expiryDate > getSystemDateAndTime())
+            this.expiryDate = pExpiryDate 
+        end if
+    return 
+
+    public void getExpiryDate ()
+    return (this.expiryDate)
+
+
+
+    public bool getYesOrNoAnswer(byval string userPrompt)
+        Variable Declarations
+            string userAnswer = "", notYNError = "Please enter Y or N."
+            bool userDecision
+
+        while userAnswer != "Y" and userAnswer != "N"
+            output userPrompt
+            input userAnswer
+            if userAnswer != "Y" and userAnswer != "N"
+                output notYNError
+            end if
+        end while
+        if userAnswer = "Y"  
+            userDecision = true
+        else
+            userDecision = false
+        end if
+    return userDecision 
+
+
+    public void calculateAmountOwing(byref num subTotal, byref num taxAmount, byref num total)
+        Variable Declarations
+            num costOfDevice = 150, taxRate = 0.13
+            num foodDispenserCost = 10, treatDispenserCost = 12, bellyRubRobotCost = 50
+
+        subtotal = costOfDevice
+        if this.foodDispenserPurchased
+            subtotal = subtotal + foodDispenserCost
+        end if
+        if this.treatDispenserPurchased
+            subtotal = subtotal + treatDispenserCost
+        end if
+        if this.bellyRubRobotPurchased
+            subtotal = subtotal + bellyRubRobotCost
+        end if
+        taxAmount = subtotal * taxRate
+        total = subtotal + taxAmount
+    return
+
+    public void displayPurchaseSummary(byval num subTotal, byval num taxAmount, byval num total)
+        Variable Declarations
+            string headingMsg = "Purchase Summary",  deviceMsg = "One Doggo Device."
+            string foodMsg = "One food dispenser.", treatMsg = "One treat dispenser."
+            string bellyMsg = "One belly rub robot."
+            string subtotalMsg = "Subtotal ", taxMsg = " Tax amount ", totalMsg = " Total "
+
+        output headingMsg
+        output deviceMsg
+        if this.foodDispenserPurchased
+            output foodMsg
+        end if
+        if this.treatDispenserPurchased
+            output treatMsg
+        end if
+        if this.bellyRubRobotPurchased
+            output bellyMsg
+        end if
+        output subtotalMsg, subtotal, taxMsg, taxAmount, totalMsg, total
+    return
+    
+    public void displayFAQ()
+        Variable Declarations
+            input file faqInputFile  
+            string tip
+            
+        open file faq.dat as faqInputFile
+        while not eof faqInputFile
+            read tip from faqInputFile
+            output tip
+        end while
+        close file
+    return
+
+end class
+
+ 
+Variable Declarations
+    string welcomePrompt = "Welcome to your canine lifestyle app"
+    string deviceMsg = "Your doggo device will be added to your shopping cart."
+    string namePrompt = "Name: ", noseBoopPrompt = "Scan nose boop: "
+    string creditCardNbrPrompt = "Credit card number "
+    string cvcPrompt = "CVC: ", expiryDatePrompt = "Expiry date: "
+    string foodDispenserPrompt = "Purchase food dispenser? Enter Y or N "
+    string treatDispenserPrompt = "Purchase treat dispenser? Enter Y or N "
+    string bellyRubPrompt = "Purchase belly rubber? Enter Y or N "
+    string name, noseBoop, creditCardNbr, cvc 
+    date expiryDate
+    bool foodDispenserPurchased, treatDispenserPurchased, bellyRubRobotPurchased
+    num subtotal = 0, taxAmount = 0, total = 0
+
+output welcomePrompt
+output deviceMsg
+output namePrompt
+input name
+ouput noseBoopPrompt
+input noseBoop
+output creditCardNbrPrompt
+input creditCardNbr 
+output cvcPrompt
+input cvc
+output expiryDatePrompt
+input expiryDate
+
+// Declare doggo object
+clsDog doggo
+// Set the first 5 doggo attributes
+doggo.setDogName(name)
+doggo.setExpiryDate(expiryDate)
+doggo.setNoseBoop(noseBoop)
+doggo.setCreditCardNbr(creditCardNbr)
+doggo.setCvc(cvc)
+// Get user input for the last 3 doggo attributes
+foodDispenserPurchased = doggo.getYesOrNoAnswer(foodDispenserPrompt)
+treatDispenserPurchased = doggo.getYesOrNoAnswer(treatDispenserPrompt)
+bellyRubRobotPurchased = doggo.getYesOrNoAnswer(bellyRubPrompt)
+// Set the last 3 doggo attributes
+doggo.setFoodDispenserPurchased(foodDispenserPurchased)
+doggo.setTreatDispenserPurchased(treatDispenserPurchased)
+doggo.setBellyRubRobotPurchased(bellyRubRobotPurchased)
+// Call the 3 required doggo functions
+doggo.calculateAmountOwing(subTotal, taxAmount, total)
+doggo.displayPurchaseSummary(subTotal, taxAmount, total)
+doggo.displayFAQ()
+
+
+
+
+
+
