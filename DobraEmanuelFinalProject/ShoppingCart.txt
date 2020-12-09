@@ -132,23 +132,18 @@ input cvc
 output expiryDatePrompt
 input expiryDate
 
-// Declare doggo object
 clsDog doggo
-// Set the first 5 doggo attributes
 doggo.setDogName(name)
 doggo.setExpiryDate(expiryDate)
 doggo.setNoseBoop(noseBoop)
 doggo.setCreditCardNbr(creditCardNbr)
 doggo.setCvc(cvc)
-// Get user input for the last 3 doggo attributes
 foodDispenserPurchased = doggo.getYesOrNoAnswer(foodDispenserPrompt)
 treatDispenserPurchased = doggo.getYesOrNoAnswer(treatDispenserPrompt)
 bellyRubRobotPurchased = doggo.getYesOrNoAnswer(bellyRubPrompt)
-// Set the last 3 doggo attributes
 doggo.setFoodDispenserPurchased(foodDispenserPurchased)
 doggo.setTreatDispenserPurchased(treatDispenserPurchased)
 doggo.setBellyRubRobotPurchased(bellyRubRobotPurchased)
-// Call the 3 required doggo functions
 doggo.calculateAmountOwing(subTotal, taxAmount, total)
 doggo.displayPurchaseSummary(subTotal, taxAmount, total)
 doggo.displayFAQ()
